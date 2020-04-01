@@ -15,6 +15,10 @@ public class ConfigController {
     @Value("${jdbc.optimus.master.url}")
     private String mysqlUrl;
 
+    @Value("${test.name}")
+    private String name;
+
+
     @GetMapping(value = "/getPassword")
     public String getPassword() {
         return password;
@@ -23,5 +27,10 @@ public class ConfigController {
     @GetMapping(value = "/getUrl")
     private String getMySqlUrl(){
         return mysqlUrl;
+    }
+
+    @GetMapping(value = "/getName")
+    public String getName(){
+        return name;
     }
 }
